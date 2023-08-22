@@ -36,7 +36,7 @@ const LeftMenu = () => {
   );
 };
 
-const Logo = () => {
+export const Logo = () => {
   return (
     <div className="text-2xl font-medium uppercase flex items-center tracking-widest ">
       FurniZen

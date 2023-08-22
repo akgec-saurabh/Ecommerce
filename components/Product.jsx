@@ -2,11 +2,10 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { LiaHeart, LiaHeartSolid } from "react-icons/lia";
 
-function Product() {
+function Product({ product }) {
+  console.log(product);
   const [isHover, setIsHover] = useState(false);
-  const imagePath = isHover
-    ? "https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-plain-glassbottle-2.jpg"
-    : "https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-plain-glassbottle.jpg";
+  const imagePath = isHover ? product.hoverImage : product.mainImage;
   return (
     <div className=" w-full group">
       <div
@@ -18,17 +17,19 @@ function Product() {
       </div>
       <div className="flex justify-between text-gray-600">
         <span className="hover:text-gray-950 cursor-pointer">
-          Glass Water Bottle
+          {product.name}
         </span>
         <span className="flex items-center gap-2 hover:text-gray-950 cursor-pointer">
-          <span className="italic font-light text-sm">990</span>
+          <span className="italic font-light text-sm">
+            {product.popularity}
+          </span>
           <LiaHeart />
         </span>
       </div>
       {isHover ? (
         <div className="italic font-light">Show More</div>
       ) : (
-        <div>&#8377;600</div>
+        <div>&#8377;{product.price}</div>
       )}
     </div>
   );
