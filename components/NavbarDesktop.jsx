@@ -10,7 +10,7 @@ const DropDown = ({ head, items }) => {
       <div className="h-full flex items-center px-2 py-2 cursor-pointer text-gray-600 hover:text-gray-950 ">
         {head}
       </div>
-      <ul className="absolute top-[100%] hidden py-4 px-6 group-hover:block bg-gray-950">
+      <ul className="absolute z-10 top-[100%] hidden py-4 px-6 group-hover:block bg-gray-950">
         {items.map((item) => (
           <li key={item.value} className="w-max">
             <Link
